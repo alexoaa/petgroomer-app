@@ -5,13 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head.ejs')%>
+    <script src="js/agendar.js"></script>
     <title><%=title%></title>
 </head>
 <body>
-    <%- include('partials/header.ejs') %>
-    <h1>Agenda tu cita</h1>
-    <li><a href="/">Home</a></li>
+    <div class="wrapper">
+        <%- include('partials/header.ejs') %>
+        <div>
+            <h1>Agenda tu cita</h1>
+            <form action="">
+                <input type="text" placeholder="Nombre cliente">
+                <input type="text" placeholder="Nombre mascota">
+                <input type="text" placeholder="Tamaño">
+                <input type="text" placeholder="Raza">
+                <input type="tel" placeholder="Número teléfono">
+                <div class="servicio-container">
+                    <label for="">Servicio</label>
+                    <div>
+                        <div class="servicio-opc">
+                            <i class="fa-solid fa-scissors"></i>
+                            <i class="fa-solid fa-bath"></i>
+                            <h2>Baño con Corte</h2>
+                        </div>
+                        <div class="servicio-opc">
+                            <i class="fa-solid fa-bath"></i>
+                            <h2>Baño</h2>
+                        </div>
+                    </div>
+                    <div class="servicio-info">
+                        <ul>
+                            <li>Agua tibia</li>
+                            <li>Limpieza de oídos</li>
+                            <li>Deslanado de pelo muerto</li>
+                            <li>Limpieza de cojinetes</li>
+                            <li>Corte de uñas</li>
+                            <li>Loción</li>
+                            <li>Limpieza de glándulas anales</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="horario-container">
+                    <label for="">Fecha</label>
+                    <input type="date">
+                    <label for="">Hora</label>
+                    <input type="time">
+                </div>
+                <div class="politicas">
+                    <div class="politicas-opc">
+                        <input type="checkbox" name="" id="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, minus. Non fugiat a quisquam, sequi facere eaque labore excepturi quia. Soluta corporis veritatis, fugit, doloribus voluptatibus, quod quidem similique voluptate unde illo molestias. Itaque vel ullam explicabo necessitatibus cupiditate quod.</p>
+                    </div>
+                    <div class="politicas-opc">
+                        <input type="checkbox" name="" id="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio soluta omnis natus officia, id ipsa nesciunt similique totam quas veniam esse sequi minus molestias temporibus est! Saepe voluptatem dolorem eligendi possimus porro officiis est quod esse reiciendis, ipsum quasi.</p>
+                    </div>
+                    <div class="politicas-opc">
+                        <input type="checkbox" name="" id="">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error blanditiis nam ad distinctio tenetur ipsa vitae sit, temporibus sunt nobis! Molestias vel distinctio rem. Exercitationem, harum ad libero aliquid doloribus veritatis aliquam, ut, unde commodi in maiores tenetur facere temporibus!</p>
+                    </div>
+                </div>
+                <button id="btnAgendar">Agendar</button>
+            </form>
+        </div>
+    </div>
     <%- include('partials/footer.ejs')%>
+    <div class="confirmacion-cita-modal toggleDisplay">
+        <div class="confirmacion-cita-container">
+            <h1>CITA AGENDADA!</h1>
+            <div class="cita-info">
+                <h2>Información:</h2>
+                <br><br>
+                <p>${Nombre de la mascota} tiene una cita de ${servicio} el ${fecha} a las ${hora} en ${direccion}.<br>Precio estimado: $${precio}</p>
+            </div>
+            <p>
+                *Recordatorios de historial de vacunacion. <br>
+                *Peticion de cancelacion de cita anticipado. <br>
+                *El precio es un estimado basado en la informacion otorgada.
+            </p>
+            <button id="btnCerrarConf">Cerrar</button>
+        </div>
+    </div>
     
 </body>
 </html>

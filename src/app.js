@@ -10,7 +10,7 @@ import { Console } from 'console';
 const app = express();
 //* get dynamic port
 const port = process.env.PORT;
-console.log(port);
+console.log('Given port: ', port);
 
 //* create dynamic route
 const __dirname = dirname(fileURLToPath(import.meta.url)); 
@@ -19,7 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.set('views', join(__dirname, 'views')); //? dynamic route
 app.set('view engine', 'ejs');
 app.use(routes);
-app.use(express.static(join(__dirname, 'public/css'))); // Load files to the nav web so they can access
+app.use(express.static(join(__dirname, 'public'))); // Load files to the nav web so they can access
 
 //* routes
 app.get('/', (req,res)=>{
