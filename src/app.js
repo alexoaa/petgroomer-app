@@ -5,8 +5,12 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import routes from './routes/routes.js';
 import exp from 'constants';
+import { Console } from 'console';
 
 const app = express();
+//* get dynamic port
+const port = process.env.PORT;
+console.log(port);
 
 //* create dynamic route
 const __dirname = dirname(fileURLToPath(import.meta.url)); 
@@ -22,6 +26,6 @@ app.get('/', (req,res)=>{
     res.render('index');
 });
 
-app.listen(5500, ()=>{
-    console.log('Server running on port 3000');
+app.listen(port || 5500, ()=>{
+    console.log(`Server running on port ${port || 3000}`);
 });
