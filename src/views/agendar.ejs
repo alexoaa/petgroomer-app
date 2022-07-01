@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head.ejs')%>
-    <script src="js/agendar.js"></script>
     <title><%=title%></title>
 </head>
 <body>
@@ -13,12 +12,13 @@
         <%- include('partials/header.ejs') %>
         <div>
             <h1>Agenda tu cita</h1>
-            <form action="">
-                <input type="text" placeholder="Nombre cliente">
-                <input type="text" placeholder="Nombre mascota">
-                <input type="text" placeholder="Tamaño">
-                <input type="text" placeholder="Raza">
-                <input type="tel" placeholder="Número teléfono">
+            <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data -->
+            <form action="/nueva-cita" method="POST">
+                <input type="text" name="nombreCliente" id="nombreCliente" placeholder="Nombre cliente" autocomplete="off">
+                <input type="text" name="nombreMascota" id="nombreMascota" placeholder="Nombre mascota" autocomplete="off">
+                <input type="text" name="tamanoMascota" id="tamanoMascota" placeholder="Tamaño" autocomplete="off">
+                <input type="email" name="emailCliente" id="emailCliente" placeholder="Email" autocomplete="off">
+                <input type="tel" name="numeroTelefono" id="numeroTelefono" placeholder="Número teléfono" autocomplete="off">
                 <div class="servicio-container">
                     <label for="">Servicio</label>
                     <div>
@@ -46,9 +46,9 @@
                 </div>
                 <div class="horario-container">
                     <label for="">Fecha</label>
-                    <input type="date">
+                    <input type="date" name="fechaCita" id="fechaCita" class="fecha-cita">
                     <label for="">Hora</label>
-                    <input type="time">
+                    <input type="time" name="horaCita" id="horaCita" class="hora-cita">
                 </div>
                 <div class="politicas">
                     <div class="politicas-opc">
@@ -64,27 +64,12 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error blanditiis nam ad distinctio tenetur ipsa vitae sit, temporibus sunt nobis! Molestias vel distinctio rem. Exercitationem, harum ad libero aliquid doloribus veritatis aliquam, ut, unde commodi in maiores tenetur facere temporibus!</p>
                     </div>
                 </div>
-                <button id="btnAgendar">Agendar</button>
+                <button id="btnAgendar" type="submit">Agendar</button>
             </form>
         </div>
     </div>
-    <%- include('partials/footer.ejs')%>
-    <div class="confirmacion-cita-modal toggleDisplay">
-        <div class="confirmacion-cita-container">
-            <h1>CITA AGENDADA!</h1>
-            <div class="cita-info">
-                <h2>Información:</h2>
-                <br><br>
-                <p>${Nombre de la mascota} tiene una cita de ${servicio} el ${fecha} a las ${hora} en ${direccion}.<br>Precio estimado: $${precio}</p>
-            </div>
-            <p>
-                *Recordatorios de historial de vacunacion. <br>
-                *Peticion de cancelacion de cita anticipado. <br>
-                *El precio es un estimado basado en la informacion otorgada.
-            </p>
-            <button id="btnCerrarConf">Cerrar</button>
-        </div>
-    </div>
-    
+    <%- include('partials/footer.ejs')%>    
 </body>
+<%- include('partials/scripts.ejs')%>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

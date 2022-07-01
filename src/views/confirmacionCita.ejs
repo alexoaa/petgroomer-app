@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de cita</title>
+    <%- include('partials/head.ejs')%>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <div class="confirmacion-cita-modal">
+        <div class="confirmacion-cita-container">
+            <h1>CITA AGENDADA!</h1>
+            <div class="cita-info">
+                <h2>Información:</h2>
+                <br><br>
+                <p><%=nombreMascota%> tiene una cita de ${servicio} el ${fecha} a las ${hora} en ${direccion}.<br>Precio estimado: $${precio}</p>
+            </div>
+            <p>
+                *Recordatorios de historial de vacunacion. <br>
+                *Peticion de cancelacion de cita anticipado. <br>
+                *El precio es un estimado basado en la informacion otorgada.
+            </p>
+            <button id="btnCerrarConf" type="button">Cerrar</button>
+        </div>
+    </div>
+</body>
+<%- include('partials/scripts.ejs')%>
+<script> 
+    const btnCerrarConf = document.getElementById('btnCerrarConf');
+        
+    //Btn cerrar modal de confirmacion cita
+    btnCerrarConf.addEventListener('click', ()=>{
+        window.location.href='/agendar-una-cita';
+    });
+    </script>
+</html>
+
+

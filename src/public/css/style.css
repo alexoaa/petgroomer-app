@@ -78,10 +78,6 @@ a{
 
 .confirmacion-cita-modal {
     height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
     background-color: wheat;
 }
 .confirmacion-cita-container {

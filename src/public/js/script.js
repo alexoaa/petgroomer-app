@@ -1,6 +1,6 @@
 'use strict';
 
-window.onload = ()=>{
+// window.onload = ()=>{
 
     const btnNav = document.getElementById('btnNav');
     const navMenu = document.querySelector('.nav-menu');
@@ -10,4 +10,4 @@ window.onload = ()=>{
         navMenu.classList.toggle('nav-menu-active');
     });
 
-};
+// };
