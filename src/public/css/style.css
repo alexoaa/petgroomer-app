@@ -2,12 +2,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* font-family: sans-serif; */
 }
-html,body {
+
+html,
+body {
     overflow-x: hidden;
     height: 100%;
     width: 100%;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -22,9 +26,11 @@ footer {
     background: red;
 }
 
-a{
+a {
     text-decoration: none;
 }
+
+/* NAV STYLE */
 
 .header-container {
     display: flex;
@@ -72,6 +78,286 @@ a{
     /* margin-top: 15px; */
 }
 
+
+/* PAGE CITA STYLE */
+
+.cita-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+
+.cita-container h1 {
+    min-width: 80%;
+    text-align: center;
+    margin: 1.2em 0 1.1em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid #202020;
+    font-size: 2.2em;
+}
+
+.form-cita {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cita-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.cita-section h2 {
+    font-size: 2em;
+}
+
+/* ! info-cliente-container */
+.info-cliente-container {
+    /* display: none; */
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+    margin: 0.8em 0;
+    display: flex;
+    align-items: center;
+}
+
+.inputBox input{
+    width: 100%;
+    padding: 20px 20px;
+    border: 1px solid rgba(100, 100, 100, 1);
+    border-radius: 5px;
+    outline: none;
+    /* color: #fff; */
+    font-size: 1.2em;
+    line-height: 20px;
+}
+
+.inputBox select {
+    width: 100%;
+    padding: 20px 20px 20px 15px;
+    border: 1px solid rgba(100, 100, 100, 1);
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2em;
+    line-height: 20px;
+    color: rgba(100, 100, 100, 0.8);
+}
+
+.inputBox span {
+    position: absolute;
+    left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(100, 100, 100, 0.8);
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    color: #3498db;
+    transform: translateX(10px) translateY(-27px);
+    font-size: 1em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #3498db;
+    border-right: 1px solid #3498db;
+}
+
+/* ! info-cliente-container */
+.servicio-container {
+    /* display: none; */
+}
+
+.servicio-opc {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.servicio-opc ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.servicio-opc ul li {
+    list-style: none;
+    padding: 1em;
+    border-radius: 2px;
+    width: 180px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicio-opc ul li input {
+    display: none;
+}
+
+.servicio-opc ul li label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.7em;
+}
+
+.servicio-opc ul li label span {
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+}
+
+.servicio-info {
+    width: 100%;
+    /* border: 1px solid #00dfc4; */
+}
+
+.servicio-info ul {
+    /* width: 100%; */
+    margin: 0 10px;
+    padding: 20px;
+    outline: 3px solid rgba(150, 150, 150, 0.7);
+    border-radius: 2px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.servicio-info ul li {
+    margin: 10px;
+}
+
+.precio-servicio {
+    border: 3px solid rgba(100, 100, 100, 0.8);
+    border-radius: 5px;
+    width: 280px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.precio-servicio h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+.precio-servicio input {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.8em;
+    text-align: center;
+    /* border: none; */
+
+}
+
+.precio-servicio input:active,
+.precio-servicio input:focus {
+    border: none;
+    outline: none;
+}
+
+.horario-container {
+    width: 100%;
+    /* height: 300px; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
+    /* ! */
+    /* display: none; */
+}
+
+.horario-cont {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5em;
+    height: 80px;
+    outline: 3px solid #505050;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding: 0 20px 0 10px;
+}
+
+.horario-cont div {
+    padding: 10px 20px;
+    font-size: 1.3em;
+    width: 5em;
+    margin-right: 40%;
+}
+
+/* .horario-cont label {
+    padding: 10px 20px;
+    font-size: 1.3em;
+    width: 5em;
+    margin-right: 45%;
+} */
+
+.horario-cont input {
+    /* width: 300px; */
+    display: none;
+}
+
+.politicas {
+    margin-bottom: 0;
+}
+
+.politicas-opc input {
+    width: 20px;
+    height: 20px;
+}
+
+.politicas-opc p {
+    margin: 15px 0 25px;
+    text-align: justify;
+}
+
+/* .horario-cont-fecha {
+    width: 300px;
+    width: 100%;
+}
+
+.horario-cont-hora {
+    width: 100%;
+
+} */
+
+#btnAgendar {
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    margin: 15px 0;
+    background: #fff;
+    font-size: 1.2em;
+}
+
+#btnAgendar:focus {
+  /* border-color: #008296; */
+}
+
+
+
+
+
+
+
+
+
+/* MODAL CONFIRMACION CITA */
+
 .toggleDisplay {
     display: none;
 }
@@ -80,6 +366,7 @@ a{
     height: 100vh;
     background-color: wheat;
 }
+
 .confirmacion-cita-container {
     height: inherit;
     display: flex;
@@ -90,6 +377,6 @@ a{
     padding: 30px;
 }
 
-.confirmacion-cita-container > button {
+.confirmacion-cita-container>button {
     display: inline-block;
 }
