@@ -7,6 +7,7 @@ import routes from './routes/routes.js';
 import exp from 'constants';
 import { Console } from 'console';
 import citas from './routes/citas.js';
+import consulta from './routes/consulta.js'
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.set('view engine', 'ejs');
 app.use(express.json()); //To convert data recieved into json
 app.use(express.static(join(__dirname, 'public'))); // Load files to the nav web so they can access
 app.use(routes, citas);
+app.use('/admin', consulta);
 
 //* Routes
 app.get('/', (req,res)=>{

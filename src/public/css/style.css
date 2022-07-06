@@ -110,7 +110,7 @@ a {
     justify-content: center;
     /* align-items: center; */
     margin-bottom: 30px;
-    padding: 15px;
+    padding: 15px 0;
 }
 
 .cita-section h2 {
@@ -199,6 +199,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px 5px;
 }
 
 .servicio-opc ul li input {
@@ -226,16 +227,22 @@ a {
 
 .servicio-info ul {
     /* width: 100%; */
-    margin: 0 10px;
-    padding: 20px;
-    outline: 3px solid rgba(150, 150, 150, 0.7);
-    border-radius: 2px;
-    /* display: flex;
-    flex-wrap: wrap; */
+    /* margin: 0 10px; */
+    padding: 15px 0 15px 30px;
+    border: 3px solid rgba(150, 150, 150, 0.7);
+    border-radius: 3px;
+    /* text-align: center; */
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .servicio-info ul li {
     margin: 10px;
+    width: 100%;
+}
+
+.servicio-info ul li i {
+    font-size: 50px;
 }
 
 .precio-servicio {

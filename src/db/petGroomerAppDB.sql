@@ -46,6 +46,8 @@ DESCRIBE cita;
 SELECT * FROM cita;
 SELECT * FROM citasEx;
 
+DELETE FROM cita;
+
 RENAME TABLE cita to citasEx;
 
 CALL citaCrearNueva;

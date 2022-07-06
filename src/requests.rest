@@ -1,0 +1,38 @@
+POST http://localhost:5500/nueva-cita
+Content-Type: application/json
+
+{
+    "nombreCliente" : "Alex", 
+    "nombreMascota" : "Hashi",
+    "razaMascota" : "Chow Chow",
+    "tamanoMascota" : "Grande",
+    "numeroTelefono" : 5510485859,
+    "segundoNumTel" : 5554301209,
+    "servicio" : "Baño",
+    "fechaCita" : "2022-02-18",
+    "horaCita" : "17:48:00",
+    "precioServicio" : "240"
+}
+
+####
+
+POST http://localhost:5500/nueva-cita
+Content-Type: application/json
+
+{
+    "nombreCliente" : "Alex", 
+    "nombreMascota" : "Mora",
+    "razaMascota" : "Mestizo",
+    "tamanoMascota" : "Grande",
+    "numeroTelefono" : 5510485859,
+    "segundoNumTel" : 5554301209,
+    "servicio" : "Baño",
+    "fechaCita" : "2022-02-18",
+    "horaCita" : "17:48:00",
+    "precioServicio" : "200"
+}
+
+####
+
+GET http://localhost:5500/admin/consulta-cita
+Content-Type: application/json
