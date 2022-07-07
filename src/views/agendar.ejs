@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head.ejs')%>
-        <title><%=title%></title>
+        <title>
+            <%=title%>
+        </title>
 </head>
 
 <body>
@@ -16,86 +18,60 @@
                 <h1>Agenda tu cita</h1>
                 <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data -->
                 <form action="/nueva-cita" method="POST" class="form-cita">
-                    <div class="info-cliente-container cita-section">
+                    <div class="cita-section">
                         <div class="inputBox">
                             <input type="text" name="nombreCliente" id="nombreCliente" autocomplete="off" required>
                             <span>Nombre Cliente</span>
                         </div>
                         <div class="inputBox">
-                            <input type="text" name="nombreMascota" id="nombreMascota" autocomplete="off" required>
-                            <span>Nombre Mascota</span>
-                        </div>
-                        <div class="inputBox">
-                            <input type="text" name="razaMascota" id="razaMascota" autocomplete="off" required>
-                            <span>Raza Mascota</span>
-                        </div>
-                        <div class="inputBox">
-                            <select name="tamanoMascota" id="tamanoMascota" aria-placeholder="Tamano Mascota">
-                                <span>Numero de Telefono</span>
-                                <option value="default">Tamaño Mascota</option>
-                                <option value="pequeño">Pequeño</option>
-                                <option value="mediano">Mediano</option>
-                                <option value="grande">Grande</option>
-                                <option value="gigante">Gigante</option>
-                            </select>
-                            <!-- <input type="text" name="tamanoMascota" id="tamanoMascota" autocomplete="off" required>
-                            <span>Tamano Mascota</span> -->
-                        </div>
-                        <div class="inputBox">
                             <input type="tel" name="numeroTelefono" id="numeroTelefono" autocomplete="off" required>
                             <span>Numero de Telefono</span>
                         </div>
-                        <div class="inputBox">
+                        <div class="inputBox" id="divSegundoNumTel">
                             <input type="tel" name="segundoNumTel" id="segundoNumTel" autocomplete="off" required>
                             <span>Extra Numero de Telefono</span>
                         </div>
-
-
-                    </div>
-                    <div class="servicio-container cita-section">
-                        <h2>Servicio</h2>
-                        <div class="servicio-opc">
-                            <ul>
-                                <li id="liBanoCorte">
-                                    <input type="radio" name="inputBanoCorte" id="inputBanoCorte" value="Baño c/ Corte">
-                                    <label for="inputBanoCorte">
-                                        <i class="fa-solid fa-scissors"></i>
-                                        <i class="fa-solid fa-bath"></i>
-                                        <span>Baño con Corte</span>
-                                    </label>
-                                </li>
-                                <li id="liBano">
-                                    <input type="radio" name="inputBanoCorte" id="inputBano" value="Baño">
-                                    <label for="inputBano">
-                                        <i class="fa-solid fa-bath"></i>
-                                        <span>Baño</span>
-                                    </label>
-                                </li>
+                        <div class="agregar-mas">
+                            <label for="btnAgregarTel">
+                                <i class="fa-solid fa-plus"></i>
+                            </label>
+                            <input type="checkbox" name="btnAgregarTel" id="btnAgregarTel">
+                        </div>
+                        
+                        <div class="datos-mascota">
+                            <div class="inputBox">
+                                <input type="text" name="nombreMascota" id="nombreMascota" autocomplete="off" required>
+                                <span>Nombre Mascota</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="razaMascota" id="razaMascota" autocomplete="off" required>
+                                <span>Raza Mascota</span>
+                            </div>
+                        </div>
+                        <div class="agregar-mas">
+                            <label for="btnAgregarMascota">
+                                <i class="fa-solid fa-plus"></i>
+                            </label>
+                            <input type="checkbox" name="btnAgregarMascota" id="btnAgregarMascota">
+                        </div>
+                        <div id="selServicio" class="servicio-select">
+                            <label for="touch">
+                                <span>Servicio</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </label>
+                            <input type="checkbox" id="touch">
+                            <ul class="slide">
+                                <li class="servicio-opc" id="opcBano">Baño</li>
+                                <li class="servicio-opc" id="opcBanoCorte">Baño con Corte</li>
+                                <li class="servicio-opc" id="opcCorte">Corte</li>
+                                <li class="servicio-opc" id="opcCoteUnas">Corte de Uñas</li>
                             </ul>
                         </div>
-                        <div class="servicio-info">
-                            <ul>
-                                <li>
-                                    <span>
-                                        Agua tibia
-                                    </span>
-                                </li>
-                                <li>Corte de uñas</li>
-                                <li>Deslanado de pelo muerto</li>
-                                <li>Limpieza de oídos</li>
-                                <li>Limpieza de cojinetes</li>
-                                <li>Limpieza de glándulas anales</li>
-                                <li>Loción</li>
-                            </ul>
+                        <div class="inputBox">
+                            <input type="number" name="precio" id="precioServicio" autocomplete="off" required>
+                            <span>Precio (opcional)</span>
                         </div>
-                        <div class="precio-servicio">
-                            <h3>Precio:</h3>
-                            <input type="number" name="precio" id="precioServicio">
-                        </div>
-                    </div>
-                    <div class="horario-container cita-section">
-                        <h2>Horario</h2>
-                        <div class="horario-cont-fecha horario-cont">
+                        <div class="horario-cont-fecha horario-container">
                             <div>
                                 <label for="fechaCita">Fecha</label>
                                 <i class="fa-solid fa-calendar-days"></i>
@@ -103,36 +79,13 @@
                             <i class="fa-solid fa-chevron-down"></i>
                             <input type="date" name="fechaCita" id="fechaCita" class="fecha-cita">
                         </div>
-                        <div class="horario-cont-hora horario-cont">
+                        <div class="horario-cont-hora horario-container">
                             <div>
                                 <label for="horaCita">Hora</label>
                                 <i class="fa-regular fa-clock"></i>
                             </div>
                             <i class="fa-solid fa-chevron-down"></i>
                             <input type="time" name="horaCita" id="horaCita" class="hora-cita">
-                        </div>
-                    </div>
-                    <div class="politicas cita-section">
-                        <div class="politicas-opc">
-                            <input type="checkbox" name="" id="">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, minus. Non fugiat a
-                                quisquam, sequi facere eaque labore excepturi quia. Soluta corporis veritatis, fugit,
-                                doloribus voluptatibus, quod quidem similique voluptate unde illo molestias. Itaque vel
-                                ullam explicabo necessitatibus cupiditate quod.</p>
-                        </div>
-                        <div class="politicas-opc">
-                            <input type="checkbox" name="" id="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio soluta omnis natus
-                                officia, id ipsa nesciunt similique totam quas veniam esse sequi minus molestias
-                                temporibus est! Saepe voluptatem dolorem eligendi possimus porro officiis est quod esse
-                                reiciendis, ipsum quasi.</p>
-                        </div>
-                        <div class="politicas-opc">
-                            <input type="checkbox" name="" id="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error blanditiis nam ad
-                                distinctio tenetur ipsa vitae sit, temporibus sunt nobis! Molestias vel distinctio rem.
-                                Exercitationem, harum ad libero aliquid doloribus veritatis aliquam, ut, unde commodi in
-                                maiores tenetur facere temporibus!</p>
                         </div>
                     </div>
                     <button id="btnAgendar" type="submit">Agendar</button>
