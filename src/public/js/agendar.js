@@ -135,5 +135,33 @@ function borrarMascota(id) {
         mascotas.removeChild(divToRemove);
     }
     else return;
-    
 }
+
+const selServicio = document.getElementById('selServicio');
+const servOpcBano = document.getElementById('servOpcBano');
+const servOpcBanoCorte = document.getElementById('servOpcBanoCorte');
+const servOpcCorte = document.getElementById('servOpcCorte');
+const servOpcCorteUnas = document.getElementById('servOpcCorteUnas');
+
+const selServicioActive = ()=>{
+    selServicio.children[1].classList.add('servSpanActive');
+    document.getElementById('touch').checked = false;
+}
+
+servOpcBano.addEventListener('click', ()=>{
+    selServicio.firstElementChild.textContent = servOpcBano.textContent;
+    selServicioActive();
+    
+});
+servOpcBanoCorte.addEventListener('click', ()=>{
+    selServicio.firstElementChild.textContent = servOpcBanoCorte.textContent;
+    selServicioActive();
+});
+servOpcCorte.addEventListener('click', ()=>{
+    selServicio.firstElementChild.textContent = servOpcCorte.textContent;
+    selServicioActive();
+});
+servOpcCorteUnas.addEventListener('click', ()=>{
+    selServicio.firstElementChild.textContent = servOpcCorteUnas.textContent;
+    selServicioActive();
+});

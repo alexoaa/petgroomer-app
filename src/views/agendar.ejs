@@ -37,8 +37,6 @@
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
-
-
                         <div class="mascotas">
                             <div class="datos-mascota" id="idDatosMascota0">
                                 <div class="inputBox">
@@ -58,35 +56,51 @@
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
-
-
-
-
-                        <div id="selServicio" class="servicio-select">
-                            <label for="touch">
+                        <div class="servicio-select">
+                            <label for="touch" id="selServicio">
+                                <span>Servicio</span>
                                 <span>Servicio</span>
                                 <i class="fa-solid fa-chevron-down"></i>
                             </label>
                             <input type="checkbox" id="touch">
                             <ul class="slide">
-                                <li class="servicio-opc" id="opcBano">Baño</li>
-                                <li class="servicio-opc" id="opcBanoCorte">Baño con Corte</li>
-                                <li class="servicio-opc" id="opcCorte">Corte</li>
-                                <li class="servicio-opc" id="opcCoteUnas">Corte de Uñas</li>
+                                <li class="servicio-opc">
+                                    <!-- <input type="radio" name="servicioOpciones" id="inputServOpcBano"> -->
+                                    <label for="servicioOpciones" id="servOpcBano">Baño</label>
+                                    <!-- <label for="servicioOpciones"><span>Baño</span></label> -->
+                                </li>
+                                <li class="servicio-opc">
+                                    <!-- <input type="radio" name="servicioOpciones" id="inputServOpcBanoCorte"> -->
+                                    <label for="servicioOpciones" id="servOpcBanoCorte">Baño con Corte</label>
+                                    <!-- <label for="servicioOpciones"><span>BañoCorte</span></label> -->
+                                </li>
+                                <li class="servicio-opc">
+                                    <!-- <input type="radio" name="servicioOpciones" id="inputServOpcCorte"> -->
+                                    <label for="servicioOpciones" id="servOpcCorte">Corte</label>
+                                    <!-- <label for="servicioOpciones"><span>Corte</span></label> -->
+                                </li>
+                                <li class="servicio-opc">
+                                    <!-- <input type="radio" name="servicioOpciones" id="inputServOpcCorteUnas"> -->
+                                    <label for="servicioOpciones" id="servOpcCorteUnas">Corte de Uñas</label>
+                                    <!-- <label for="servicioOpciones"><span>CorteUñas</span></label> -->
+                                </li>
                             </ul>
                         </div>
                         <div class="inputBox">
                             <input type="number" name="precio" id="precioServicio" autocomplete="off" required>
                             <span>Precio (opcional)</span>
                         </div>
+
+
                         <div class="horario-cont-fecha horario-container">
                             <div>
                                 <label for="fechaCita">Fecha</label>
-                                <i class="fa-solid fa-calendar-days"></i>
                             </div>
-                            <i class="fa-solid fa-chevron-down"></i>
-                            <input type="date" name="fechaCita" id="fechaCita" class="fecha-cita">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                            <!-- <input type="date" name="fechaCita" id="fechaCita" class="fecha-cita"> -->
                         </div>
+
                         <div class="horario-cont-hora horario-container">
                             <div>
                                 <label for="horaCita">Hora</label>
@@ -95,6 +109,7 @@
                             <i class="fa-solid fa-chevron-down"></i>
                             <input type="time" name="horaCita" id="horaCita" class="hora-cita">
                         </div>
+
                     </div>
                     <button id="btnAgendar" type="submit">Agendar</button>
                 </form>

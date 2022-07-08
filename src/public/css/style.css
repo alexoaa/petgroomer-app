@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    /* color: #202020 */
 }
 
 html,
@@ -26,7 +27,7 @@ footer {
     background: red;
 }
 
-a {
+li, a, a:visited, a:link {
     text-decoration: none;
 }
 
@@ -64,8 +65,8 @@ a {
     width: 100vw;
     position: absolute;
     transform: translateY(-500px);
-    background-color: rebeccapurple;
-    font-size: 3em;
+    background: #3498db;
+    font-size: 2em;
     padding: 20px 15px;
 }
 
@@ -75,9 +76,12 @@ a {
 }
 
 .nav-item {
-    /* margin-top: 15px; */
+
 }
 
+.nav-item a{
+    /* color: #202020 */
+}
 
 /* PAGE CITA STYLE */
 
@@ -152,7 +156,7 @@ a {
 .inputBox input:valid~span,
 .inputBox input:focus~span {
     color: #3498db;
-    transform: translateX(2px) translateY(-27px);
+    transform: translateX(2px) translateY(-29px);
     font-size: 1em;
     padding: 0 10px;
     background: #fff;
@@ -242,7 +246,6 @@ a {
 }
 
 .slide li {
-    padding: 20px 0;
     border-top: 1px solid rgba(100, 100, 100, 1);
 }
 
@@ -256,9 +259,69 @@ a {
     height: 245px;
 }
 
+.servicio-opc input[type=radio] {
+    display: none;
+}
+
+.servicio-opc label {
+    display: block;
+    padding: 20px 0;
+}
+
+#selServicio span:nth-child(2) {
+    position: absolute;
+    left: 10px;
+    padding: 0 10px;
+    pointer-events: none;
+    font-size: 1em;
+    /* color: rgba(100, 100, 100, 0.8); */
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+.servSpanActive {
+    color: #3498db;
+    transform: translateX(2px) translateY(-29px);
+    font-size: 1em;
+    padding: 0 10px;
+    background: #fff;
+    border-left: 1px solid #3498db;
+    border-right: 1px solid #3498db;
+    transition: all 0.5s;
+    left: 0;
+}
+
 /*  */
 
+.inputBox input {
+    width: 100%;
+    padding: 20px 20px;
+    
+    outline: none;
+    font-size: 1.2em;
+    line-height: 20px;
+}
+
 .horario-container {
+    position: relative;
+    width: 300px;
+    line-height: 20px;
+    padding: 20px;
+    border: 1px solid rgba(100, 100, 100, 1);
+    border-radius: 5px;
+    color: rgba(100, 100, 100, 0.8);
+    text-transform: uppercase;
+    margin: 0.8em 0;
+}
+.horario-container div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.horario-container div label {
+    /* margin-right: 70%; */
+}
+/* .horario-container {
     display: flex;
     align-items: center;
     width: 300px;
@@ -268,14 +331,7 @@ a {
     border-radius: 5px;
     margin-top: 50px;
     padding: 0 20px 0 10px;
-}
-
-.horario-container div {
-    padding: 10px 20px;
-    font-size: 1.3em;
-    width: 5em;
-    margin-right: 40%;
-}
+} */
 
 /* .horario-container label {
     padding: 10px 20px;
