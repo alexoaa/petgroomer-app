@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <%- include('partials/head.ejs')%>
         <title>
             <%=title%>
@@ -24,36 +25,43 @@
                             <span>Nombre Cliente</span>
                         </div>
                         <div class="inputBox">
-                            <input type="tel" name="numeroTelefono" id="numeroTelefono" autocomplete="off" required>
+                            <input type="number" name="numeroTelefono" id="numeroTelefono" autocomplete="off" required>
                             <span>Numero de Telefono</span>
                         </div>
-                        <div class="inputBox" id="divSegundoNumTel">
-                            <input type="tel" name="segundoNumTel" id="segundoNumTel" autocomplete="off" required>
+                        <div class="inputBox toggle-seg-num" id="divSegundoNumTel">
+                            <input type="number" name="segundoNumTel" id="segundoNumTel" autocomplete="off" required>
                             <span>Extra Numero de Telefono</span>
                         </div>
                         <div class="agregar-mas">
-                            <label for="btnAgregarTel">
+                            <button type="button" id="btnAgregarTel">
                                 <i class="fa-solid fa-plus"></i>
-                            </label>
-                            <input type="checkbox" name="btnAgregarTel" id="btnAgregarTel">
+                            </button>
                         </div>
-                        
-                        <div class="datos-mascota">
-                            <div class="inputBox">
-                                <input type="text" name="nombreMascota" id="nombreMascota" autocomplete="off" required>
-                                <span>Nombre Mascota</span>
-                            </div>
-                            <div class="inputBox">
-                                <input type="text" name="razaMascota" id="razaMascota" autocomplete="off" required>
-                                <span>Raza Mascota</span>
+
+
+                        <div class="mascotas">
+                            <div class="datos-mascota" id="idDatosMascota0">
+                                <div class="inputBox">
+                                    <input type="text" name="nombreMascota" id="idNombreMascota0" autocomplete="off"
+                                        required>
+                                    <span>Nombre Mascota</span>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="razaMascota" id="idRazaMascota0" autocomplete="off"
+                                    required>
+                                    <span>Raza Mascota</span>
+                                </div>
                             </div>
                         </div>
                         <div class="agregar-mas">
-                            <label for="btnAgregarMascota">
+                            <button type="button" id="btnAgregarMascota">
                                 <i class="fa-solid fa-plus"></i>
-                            </label>
-                            <input type="checkbox" name="btnAgregarMascota" id="btnAgregarMascota">
+                            </button>
                         </div>
+
+
+
+
                         <div id="selServicio" class="servicio-select">
                             <label for="touch">
                                 <span>Servicio</span>

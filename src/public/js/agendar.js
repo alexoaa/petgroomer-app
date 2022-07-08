@@ -12,7 +12,13 @@ const inputBano = document.getElementById('inputBano');
 const fechaCita = document.getElementById('fechaCita');
 const horaCita = document.getElementById('horaCita');
 const precioServicio = document.getElementById('precioServicio');
+const btnAgregarTel = document.getElementById('btnAgregarTel');
+const btnAgregarMascota = document.getElementById('btnAgregarMascota');
+const divSegundoNumTel = document.getElementById('divSegundoNumTel');
+const mascotas = document.querySelector('.mascotas');
+const documentFragment = document.createDocumentFragment();
 
+let ids = 1;
 
 //Btn de agendar cita
 /* btnAgendar.addEventListener('click', (e) => {
@@ -52,15 +58,82 @@ const precioServicio = document.getElementById('precioServicio');
 
 }); */
 
-inputBanoCorte.addEventListener('click', () => {
-    if (inputBanoCorte.checked === true) {
-        document.getElementById('liBano').style.outline = 'none';
-        document.getElementById('liBanoCorte').style.outline = '2px solid #404040';
-    }
+
+btnAgregarTel.addEventListener('click', () => {
+    divSegundoNumTel.classList.toggle('toggle-seg-num');
+    btnAgregarTel.classList.toggle('btn-quitar-seg-num');
+    btnAgregarTel.firstElementChild.classList.toggle('fa-plus');
+    btnAgregarTel.firstElementChild.classList.toggle('fa-xmark');
+    segundoNumTel.value = '';
 });
-inputBano.addEventListener('click', () => {
-    if (inputBano.checked === true) {
-        document.getElementById('liBanoCorte').style.outline = 'none';
-        document.getElementById('liBano').style.outline = '2px solid #404040';
-    }
+
+btnAgregarMascota.addEventListener('click', () => {
+    const divParaBtnMascotas = document.createElement('div');
+    const divDatosMascota = document.createElement('div');
+    const divInputBox = document.createElement('div');
+    const divInputBox2 = document.createElement('div');
+    const input = document.createElement('input');
+    const input2 = document.createElement('input');
+    const span = document.createElement('span');
+    const span2 = document.createElement('span');
+    const btnBorrarMascota = document.createElement('button');
+    const iBtnBorrarMascotas = document.createElement('i');
+
+    divParaBtnMascotas.classList.add('divParaBtnMascotas');
+    btnBorrarMascota.classList.add('btnBorrarMascota');
+    btnBorrarMascota.setAttribute('type','button');
+    btnBorrarMascota.setAttribute('onclick','borrarMascota(this.id)');
+    iBtnBorrarMascotas.classList.add('fa-solid');
+    iBtnBorrarMascotas.classList.add('fa-trash-can');
+    divDatosMascota.classList.add('datos-mascota');
+    divInputBox.classList.add('inputBox');
+    input.setAttribute('type', 'text');
+    input.setAttribute('name', 'nombreMascota');
+    input.setAttribute('autocomplete', 'off');
+    input.setAttribute('required', 'true');
+    span.textContent = 'Nombre Mascota';
+
+    divInputBox2.classList.add('inputBox');
+    input2.setAttribute('type', 'text');
+    input2.setAttribute('name', 'razaMascota');
+    input2.setAttribute('autocomplete', 'off');
+    input2.setAttribute('required', 'true');
+    span2.textContent = 'Raza Mascota';
+
+    //* Asigning Id to button and div datosMascota and id
+    divParaBtnMascotas.id = `idDivParaBtnMascotas_${ids}`;
+    divDatosMascota.id = `idDatosMascota_${ids}`;
+    btnBorrarMascota.id = `idBtnBorrarMascota_${ids}`;
+    input.id = `idNombreMascota_${ids}`;
+    input2.id = `idRazaMascota_${ids++}`;
+
+    divParaBtnMascotas.appendChild(divDatosMascota);
+
+    divDatosMascota.appendChild(divInputBox);
+    divInputBox.appendChild(input);
+    divInputBox.appendChild(span);
+
+    divDatosMascota.appendChild(divInputBox2);
+    divInputBox2.appendChild(input2);
+    divInputBox2.appendChild(span2);
+
+    btnBorrarMascota.appendChild(iBtnBorrarMascotas);
+
+    divParaBtnMascotas.appendChild(btnBorrarMascota);
+
+    
+    documentFragment.appendChild(divParaBtnMascotas);
+    mascotas.appendChild(documentFragment);
+
+    // const datosMascota = document.querySelectorAll('.datos-mascota');
+    // console.log(datosMascota);
 });
+
+function borrarMascota(id) {
+    if (mascotas.childNodes.length > 1 && !(id === undefined)) {
+        const divToRemove = document.getElementById(`idDivParaBtnMascotas_${id.toLowerCase().split('_')[1]}`);
+        mascotas.removeChild(divToRemove);
+    }
+    else return;
+    
+}

@@ -85,7 +85,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 10px;
+    /* padding: 0 10px 0 0; */
     margin-bottom: 50px;
 }
 
@@ -102,6 +102,8 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .cita-section {
@@ -110,6 +112,8 @@ a {
     justify-content: center;
     /* margin-bottom: 30px; */
     padding: 15px 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .cita-section h2 {
@@ -156,10 +160,34 @@ a {
     border-right: 1px solid #3498db;
 }
 
-.datos-mascota {
+.divParaBtnMascotas .datos-mascota  {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
+    border-radius: 5px;
+    position: relative;
+    width: 270px;
+}
+
+.divParaBtnMascotas .datos-mascota .inputBox {
+    width: 250px;
+}
+
+.divParaBtnMascotas {
+    display: flex;
+    /* flex-wrap: wrap; */
+    position: relative;
+}
+
+.btnBorrarMascota {
+    position: relative;
+    align-self: center;
+    height: 150px;
+    width: 30px;
+}
+
+.toggle-seg-num {
+    display: none;
 }
 
 .agregar-mas {
@@ -168,23 +196,21 @@ a {
     display: flex;
     /* justify-content: center; */
     margin-bottom: 0.8em;
-    border: 1px solid rgba(100, 100, 100, 1);
-    border-radius: 5px;
-    background: rgba(230, 230, 230, 1);
 }
 
-.agregar-mas label {
+.agregar-mas button {
     width: 100%;
     text-align: center;
     padding: 0.5em;
+    border: 1px solid rgba(100, 100, 100, 1);
+    border-radius: 5px;
+    font-size: 1em;
 }
 
-.agregar-mas input[type=checkbox] {
-    display: none;
-}
-
-#segundoNumTel:checked+.divSegundoNumTel {
-    background: red;
+.btn-quitar-seg-num {
+    border: none !important;
+    background: rgba(240, 40, 40, 1);
+    color: #fff;
 }
 
 .servicio-select {
